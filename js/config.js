@@ -1,5 +1,5 @@
 /**
  * Oceania MineBuild Supply — site config
- * Replace CONTACT_EMAIL with your real quotes inbox before go-live.
+ * Quote form and About mailto use CONTACT_EMAIL.
  */
 const CONTACT_EMAIL = 'josephweng58@gmail.com';
