@@ -37,11 +37,11 @@ Mailto MVP — the quote form opens the user’s email client with a pre-filled 
 |------|--------|
 | Config file | `js/config.js` |
 | Constant | `CONTACT_EMAIL` |
-| Placeholder | `josephweng58@gmail.com` |
+| Quotes inbox | `josephweng58@gmail.com` |
 
-**Before go-live:** replace `josephweng58@gmail.com` with your real quotes inbox. The About page reads the same constant for the displayed mailto link. Do **not** invent a real address in the repo.
+The About page and quote form use this same constant for mailto links.
 
-**上线前：** 将 `js/config.js` 中的 `CONTACT_EMAIL` 改为真实询价邮箱。About 页会读取同一常量。请勿在仓库中编造真实邮箱。
+About 页与询价表共用该常量作为 mailto 收件地址。
 
 ---
 
