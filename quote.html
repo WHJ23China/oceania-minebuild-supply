@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Quote — Oceania MineBuild Supply</title>
+  <meta name="description" content="Submit an RFQ for PPE, hardware, hose, lubricants, site lighting or fleet parts. Preliminary quotes on standard items in 24–48 hours.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="4" fill="#e85d04"/>
+          <path d="M8 26V10h4.2l5.4 10.2L23 10H27v16h-3.4V16.4L19.2 26h-2.4l-4.4-9.6V26H8z" fill="#0b1c2c"/>
+        </svg>
+        <span>Oceania MineBuild Supply
+          <span class="tag">AU · NZ · PNG · Pacific</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="fleet-parts.html">Fleet Parts</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+          <li><a href="how-sourcing-works.html">How It Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="quote.html" class="cta-nav active">Request a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <p class="section-label">RFQ desk</p>
+        <h1>Request a Quote</h1>
+        <p class="lead">Fill in the form below. Your email client opens a pre-filled message to our quotes inbox — no account required. Standard consumables: preliminary response in 24–48 hours.</p>
+      </div>
+    </div>
+
+    <section class="container">
+      <div class="form-wrap">
+        <div class="note-box">
+          <strong>Mailto MVP.</strong> Submitting opens your default mail app with the RFQ body. Replace <code>CONTACT_EMAIL</code> in <code>js/config.js</code> before go-live.
+        </div>
+
+        <div id="form-success" class="form-success" role="status">
+          <h3>RFQ draft ready</h3>
+          <p>Your mail client should have opened. If it did not, copy the details and send them to the address shown on the <a href="about.html">About / Contact</a> page.</p>
+        </div>
+
+        <form id="quote-form" novalidate>
+          <div class="form-group">
+            <label for="company">Company <span class="req">*</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization" required>
+            <div class="field-error" data-error-for="company"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="country-site">Country &amp; project site <span class="req">*</span></label>
+            <input type="text" id="country-site" name="country-site" placeholder="e.g. PNG — Porgera / AU — Pilbara" required>
+            <p class="hint">Country plus mine, project or city so we can plan the corridor.</p>
+            <div class="field-error" data-error-for="country-site"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category <span class="req">*</span></label>
+            <select id="category" name="category" required>
+              <option value="">Select a category…</option>
+              <option value="PPE &amp; Safety">PPE &amp; Safety</option>
+              <option value="Fasteners &amp; Hardware">Fasteners &amp; Hardware</option>
+              <option value="Hose, Fittings &amp; Valves">Hose, Fittings &amp; Valves</option>
+              <option value="Lubricants, Cleaners &amp; Packaging">Lubricants, Cleaners &amp; Packaging</option>
+              <option value="Temporary Power &amp; Site Lighting">Temporary Power &amp; Site Lighting</option>
+              <option value="Fleet &amp; Equipment Parts">Fleet &amp; Equipment Parts</option>
+              <option value="Other / Mixed">Other / Mixed</option>
+            </select>
+            <div class="field-error" data-error-for="category"></div>
+          </div>
+
+          <div id="fleet-fields" class="fleet-fields">
+            <p><strong>Fleet / equipment details</strong> — required when category is Fleet &amp; Equipment Parts.</p>
+            <div class="form-group">
+              <label for="equip-make-model">Equipment make / model <span class="req">*</span></label>
+              <input type="text" id="equip-make-model" name="equip-make-model" data-fleet-required placeholder="e.g. CAT 777F / Komatsu PC1250">
+              <div class="field-error" data-error-for="equip-make-model"></div>
+            </div>
+            <div class="form-group">
+              <label>Fleet or site use <span class="req">*</span></label>
+              <div class="radio-group">
+                <label><input type="radio" name="fleet-use" id="fleet-use-fleet" value="Fleet"> Fleet</label>
+                <label><input type="radio" name="fleet-use" id="fleet-use-site" value="Site"> Site</label>
+              </div>
+              <div class="field-error" data-error-for="fleet-use-fleet"></div>
+            </div>
+            <div class="form-group">
+              <label>OEM or alternative OK <span class="req">*</span></label>
+              <div class="radio-group">
+                <label><input type="radio" name="oem-alt" id="oem-alt-oem" value="OEM only"> OEM only</label>
+                <label><input type="radio" name="oem-alt" id="oem-alt-alt" value="Alternative OK"> Alternative OK</label>
+                <label><input type="radio" name="oem-alt" id="oem-alt-either" value="Either — quote both"> Either — quote both</label>
+              </div>
+              <div class="field-error" data-error-for="oem-alt-oem"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="items">Item list / specs <span class="req">*</span></label>
+            <textarea id="items" name="items" required placeholder="Part numbers, grades, sizes, standards, drawings notes…"></textarea>
+            <div class="field-error" data-error-for="items"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quantity">Quantity <span class="req">*</span></label>
+              <input type="text" id="quantity" name="quantity" required placeholder="e.g. 200 pairs / 5 sets">
+              <div class="field-error" data-error-for="quantity"></div>
+            </div>
+            <div class="form-group">
+              <label for="needed-by">Needed-by date <span class="req">*</span></label>
+              <input type="date" id="needed-by" name="needed-by" required>
+              <div class="field-error" data-error-for="needed-by"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="incoterm">Incoterm preference <span class="req">*</span></label>
+            <select id="incoterm" name="incoterm" required>
+              <option value="">Select…</option>
+              <option value="EXW">EXW</option>
+              <option value="FOB">FOB</option>
+              <option value="CIF">CIF</option>
+              <option value="CFR">CFR</option>
+              <option value="DAP">DAP</option>
+              <option value="DDP">DDP</option>
+              <option value="Advise best option">Advise best option</option>
+            </select>
+            <div class="field-error" data-error-for="incoterm"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Certificates required <span class="req">*</span></label>
+            <div class="radio-group">
+              <label><input type="radio" name="certificates" id="certificates-yes" value="Yes"> Yes</label>
+              <label><input type="radio" name="certificates" id="certificates-no" value="No"> No</label>
+              <label><input type="radio" name="certificates" id="certificates-advise" value="Advise"> Advise</label>
+            </div>
+            <div class="field-error" data-error-for="certificates-yes"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Additional notes</label>
+            <textarea id="notes" name="notes" placeholder="Packing constraints, destination hub, contact preferences…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Open email RFQ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="4" fill="#e85d04"/>
+            <path d="M8 26V10h4.2l5.4 10.2L23 10H27v16h-3.4V16.4L19.2 26h-2.4l-4.4-9.6V26H8z" fill="#0b1c2c"/>
+          </svg>
+          <span>Oceania MineBuild Supply</span>
+        </a>
+        <p>Mining &amp; construction materials desk for Australia, New Zealand, PNG &amp; the Pacific.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="categories.html">Categories</a>
+        <a href="fleet-parts.html">Fleet &amp; Equipment Parts</a>
+        <a href="delivery.html">Delivery Corridors</a>
+        <a href="how-sourcing-works.html">How Sourcing Works</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="quote.html">Request a Quote</a>
+        <a href="about.html">About / Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Oceania MineBuild Supply. B2B sourcing desk — not a retail store.</span>
+      <span>Independent venture · Industrial consumables for Oceania sites</span>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quote.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get('cat');
+      if (!cat) return;
+      var select = document.getElementById('category');
+      if (!select) return;
+      var decoded = decodeURIComponent(cat);
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === decoded || select.options[i].text === decoded) {
+          select.selectedIndex = i;
+          select.dispatchEvent(new Event('change'));
+          break;
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

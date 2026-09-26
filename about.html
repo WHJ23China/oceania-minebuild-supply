@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About / Contact — Oceania MineBuild Supply</title>
+  <meta name="description" content="Oceania MineBuild Supply — China sourcing desk for mining and construction consumables into Australia, New Zealand, PNG and the Pacific.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="4" fill="#e85d04"/>
+          <path d="M8 26V10h4.2l5.4 10.2L23 10H27v16h-3.4V16.4L19.2 26h-2.4l-4.4-9.6V26H8z" fill="#0b1c2c"/>
+        </svg>
+        <span>Oceania MineBuild Supply
+          <span class="tag">AU · NZ · PNG · Pacific</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="fleet-parts.html">Fleet Parts</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+          <li><a href="how-sourcing-works.html">How It Works</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="quote.html" class="cta-nav">Request a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <p class="section-label">Company</p>
+        <h1>About / Contact</h1>
+        <p class="lead">An independent China sourcing desk for site-critical consumables serving mining and construction buyers across Oceania.</p>
+      </div>
+    </div>
+
+    <section class="container">
+      <div class="grid-2" style="margin-bottom:2rem">
+        <article class="card">
+          <h3>Who we are</h3>
+          <p>Oceania MineBuild Supply helps procurement, project and stores teams buy PPE, fasteners, hose, lubricants, packaging and certified temporary power from China — with clear quotes and corridor delivery into AU, NZ, PNG and the wider Pacific.</p>
+        </article>
+        <article class="card">
+          <h3>How we work</h3>
+          <p>RFQ in, comparable quote out. Fleet and equipment parts are enquiry-only — no public catalogue. We are a B2B materials desk, not a retail counter or local breakdown warehouse.</p>
+        </article>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-block">
+          <dl>
+            <dt>Quotes inbox</dt>
+            <dd><a id="contact-email-link" href="mailto:quotes@minebuild.example">quotes@minebuild.example</a></dd>
+            <dt>Preferred channel</dt>
+            <dd><a href="quote.html">Request a Quote form</a> (opens mailto with your RFQ)</dd>
+            <dt>Audience</dt>
+            <dd>Mining &amp; construction B2B — AU · NZ · PNG · Pacific</dd>
+          </dl>
+        </div>
+        <div class="contact-block">
+          <dl>
+            <dt>Primary corridors</dt>
+            <dd>Sydney · Auckland · Port Moresby</dd>
+            <dt>Quote window</dt>
+            <dd>24–48 hours on standard consumables</dd>
+            <dt>Positioning</dt>
+            <dd>Industrial sourcing desk · Independent venture</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="note-box" style="margin-top:2rem">
+        <strong>Email config.</strong> The address above is a placeholder. Before go-live, set <code>CONTACT_EMAIL</code> in <code>js/config.js</code> to your real quotes inbox. This page updates the mailto link from that constant when JS loads.
+      </div>
+
+      <div class="btn-row" style="margin-top:1.5rem">
+        <a class="btn btn-primary" href="quote.html">Request a Quote</a>
+        <a class="btn btn-secondary" href="how-sourcing-works.html">How sourcing works</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="4" fill="#e85d04"/>
+            <path d="M8 26V10h4.2l5.4 10.2L23 10H27v16h-3.4V16.4L19.2 26h-2.4l-4.4-9.6V26H8z" fill="#0b1c2c"/>
+          </svg>
+          <span>Oceania MineBuild Supply</span>
+        </a>
+        <p>Mining &amp; construction materials desk for Australia, New Zealand, PNG &amp; the Pacific.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="categories.html">Categories</a>
+        <a href="fleet-parts.html">Fleet &amp; Equipment Parts</a>
+        <a href="delivery.html">Delivery Corridors</a>
+        <a href="how-sourcing-works.html">How Sourcing Works</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="quote.html">Request a Quote</a>
+        <a href="about.html">About / Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Oceania MineBuild Supply. B2B sourcing desk — not a retail store.</span>
+      <span>Independent venture · Industrial consumables for Oceania sites</span>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      if (typeof CONTACT_EMAIL === 'undefined') return;
+      var link = document.getElementById('contact-email-link');
+      if (link) {
+        link.href = 'mailto:' + CONTACT_EMAIL;
+        link.textContent = CONTACT_EMAIL;
+      }
+    })();
+  </script>
+</body>
+</html>
